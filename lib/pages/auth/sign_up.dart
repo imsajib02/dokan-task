@@ -5,6 +5,7 @@ import '../../barrels/localizations.dart';
 import '../../barrels/resources.dart';
 import '../../barrels/utils.dart';
 import '../../barrels/widgets.dart';
+import '../../route/routes.dart';
 
 class Signup extends StatelessWidget {
 
@@ -192,10 +193,14 @@ class Signup extends StatelessWidget {
 
                       8.w,
 
-                      Text(STR_LOGIN.tr,
-                        style: TextStyles.hintStyle.copyWith(
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xFF2893E3),
+                      GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: () => Get.offNamed(ROUTE_INITIAL),
+                        child: Text(STR_LOGIN.tr,
+                          style: TextStyles.hintStyle.copyWith(
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xFF2893E3),
+                          ),
                         ),
                       ),
                     ],
