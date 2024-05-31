@@ -10,3 +10,6 @@ const STR_PASSWORD = 'password';
 const STR_FORGOT_PASSWORD = 'forgot_password';
 const STR_LOGIN = 'login';
 const STR_CREATE_NEW_ACCOUNT = 'create_new_account';
+const STR_NAME = 'name';
+const STR_CONFIRM_PASSWORD = 'confirm_password';
+const STR_ALREADY_SIGNED = 'already_signup';
