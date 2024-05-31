@@ -13,3 +13,4 @@ const STR_CREATE_NEW_ACCOUNT = 'create_new_account';
 const STR_NAME = 'name';
 const STR_CONFIRM_PASSWORD = 'confirm_password';
 const STR_ALREADY_SIGNED = 'already_signup';
+const STR_SIGNUP = 'signup';

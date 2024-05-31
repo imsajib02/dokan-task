@@ -16,6 +16,7 @@ class AppLocalization extends Translations {
       'name': 'Name',
       'confirm_password': 'Confirm Password',
       'already_signup': 'Already have an account?',
+      'signup': 'Sign Up',
     },
     'bn_BD': {
       'app_name': 'দোকান',
