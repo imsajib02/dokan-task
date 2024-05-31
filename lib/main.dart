@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Obx(() => GetMaterialApp(
+    return GetMaterialApp(
       title: dotenv.env['APP_TITLE']!,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
@@ -37,6 +37,6 @@ class MyApp extends StatelessWidget {
       fallbackLocale: LOCALE_ENGLISH,
       initialRoute: ROUTE_INITIAL,
       getPages: appPages,
-    ));
+    );
   }
 }
