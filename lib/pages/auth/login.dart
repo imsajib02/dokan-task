@@ -78,6 +78,18 @@ class Login extends StatelessWidget {
                         ),
                       ),
                     ),
+                    validator: (value) {
+
+                      if((value == null || value.isEmpty)) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      if(value.length < 6) {
+                        return STR_PASSWORD_LENGTH_SHORT.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   18.h,
