@@ -61,11 +61,11 @@ class Login extends StatelessWidget {
 
                   19.h,
 
-                  CustomTextField(
+                  Obx(() => CustomTextField(
                     controller: _passwordController,
                     hintText: STR_PASSWORD.tr,
                     inputType: TextInputType.visiblePassword,
-                    obscureText: true,
+                    obscureText: !_authController.isPasswordVisible.value,
                     prefixImagePath: 'assets/images/lock.png',
                     suffixIcon: Container(
                       margin: EdgeInsets.fromLTRB(30, 21, 23, 19),
@@ -90,7 +90,7 @@ class Login extends StatelessWidget {
 
                       return null;
                     },
-                  ),
+                  )),
 
                   18.h,
 
