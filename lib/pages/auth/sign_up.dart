@@ -106,7 +106,7 @@ class Signup extends StatelessWidget {
 
                   CustomTextField(
                     controller: _nameController,
-                    hintText: STR_NAME.tr,
+                    hintText: STR_USERNAME.tr,
                     inputType: TextInputType.text,
                     prefixImagePath: 'assets/images/person.png',
                   ),
