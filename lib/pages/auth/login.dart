@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../barrels/localizations.dart';
+import '../../barrels/models.dart';
 import '../../barrels/resources.dart';
 import '../../barrels/utils.dart';
 import '../../barrels/widgets.dart';
 import '../../route/routes.dart';
+import 'controller/auth_controller.dart';
 
 class Login extends StatelessWidget {
 
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final _authController = Get.put(AuthController());
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   Login({Key? key}) : super(key: key);
 
@@ -27,7 +29,7 @@ class Login extends StatelessWidget {
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           child: Form(
-            key: _formKey,
+            key: _authController.formKey,
             child: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 32,
@@ -52,39 +54,56 @@ class Login extends StatelessWidget {
                   38.h,
 
                   CustomTextField(
-                    controller: _emailController,
-                    hintText: STR_EMAIL.tr,
-                    inputType: TextInputType.emailAddress,
-                    prefixImagePath: 'assets/images/email.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 20,
-                    ),
+                    controller: _usernameController,
+                    hintText: STR_USERNAME.tr,
+                    inputType: TextInputType.text,
+                    prefixImagePath: 'assets/images/person.png',
+                    validator: (value) {
+
+                      if((value == null || value.isEmpty)) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   19.h,
 
-                  CustomTextField(
+                  Obx(() => CustomTextField(
                     controller: _passwordController,
                     hintText: STR_PASSWORD.tr,
                     inputType: TextInputType.visiblePassword,
-                    obscureText: true,
+                    obscureText: !_authController.isPasswordVisible.value,
                     prefixImagePath: 'assets/images/lock.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 19,
-                    ),
-                    suffixIcon: Container(
-                      margin: EdgeInsets.fromLTRB(30, 21, 23, 19),
-                      child: SizedBox(
-                        height: 20,
-                        width: 23,
-                        child: Icon(Icons.visibility_off,
-                          size: 20,
-                          color: Colors.grey,
+                    suffixIcon: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () => _authController.togglePasswordVisibility(),
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(30, 21, 23, 19),
+                        child: SizedBox(
+                          height: 20,
+                          width: 23,
+                          child: Icon(!_authController.isPasswordVisible.value ? Icons.visibility_off : Icons.visibility,
+                            size: 20,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                    validator: (value) {
+
+                      if((value == null || value.isEmpty)) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      if(value.length < 6) {
+                        return STR_PASSWORD_LENGTH_SHORT.tr;
+                      }
+
+                      return null;
+                    },
+                  )),
 
                   18.h,
 
@@ -102,7 +121,12 @@ class Login extends StatelessWidget {
 
                   CustomButton(
                     text: STR_LOGIN.tr,
-                    onTap: () {},
+                    onTap: () => _authController.validateLoginForm(
+                      User(
+                        username: _usernameController.text,
+                        password: _passwordController.text,
+                      )
+                    ),
                   ),
 
                   40.h,

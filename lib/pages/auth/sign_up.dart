@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../barrels/localizations.dart';
+import '../../barrels/models.dart';
 import '../../barrels/resources.dart';
 import '../../barrels/utils.dart';
 import '../../barrels/widgets.dart';
 import '../../route/routes.dart';
+import 'controller/auth_controller.dart';
 
 class Signup extends StatelessWidget {
 
-  final TextEditingController _nameController = TextEditingController();
+  final _authController = Get.find<AuthController>();
+
+  final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
-
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Signup({Key? key}) : super(key: key);
 
@@ -29,7 +31,7 @@ class Signup extends StatelessWidget {
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           child: Form(
-            key: _formKey,
+            key: _authController.formKey,
             child: Container(
               margin: EdgeInsets.only(bottom: 54),
               padding: EdgeInsets.symmetric(horizontal: 32),
@@ -104,14 +106,18 @@ class Signup extends StatelessWidget {
                   52.h,
 
                   CustomTextField(
-                    controller: _nameController,
-                    hintText: STR_NAME.tr,
+                    controller: _usernameController,
+                    hintText: STR_USERNAME.tr,
                     inputType: TextInputType.text,
                     prefixImagePath: 'assets/images/person.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 20,
-                    ),
+                    validator: (value) {
+
+                      if((value == null || value.isEmpty)) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   19.h,
@@ -121,10 +127,18 @@ class Signup extends StatelessWidget {
                     hintText: STR_EMAIL.tr,
                     inputType: TextInputType.emailAddress,
                     prefixImagePath: 'assets/images/email.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 20,
-                    ),
+                    validator: (value) {
+
+                      if(value == null || value.isEmpty) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      if(!GetUtils.isEmail(value)) {
+                        return STR_INVALID_EMAIL.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   19.h,
@@ -135,9 +149,18 @@ class Signup extends StatelessWidget {
                     inputType: TextInputType.visiblePassword,
                     obscureText: true,
                     prefixImagePath: 'assets/images/lock.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 19,
-                    ),
+                    validator: (value) {
+
+                      if((value == null || value.isEmpty)) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      if(value.length < 6) {
+                        return STR_PASSWORD_LENGTH_SHORT.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   19.h,
@@ -148,16 +171,35 @@ class Signup extends StatelessWidget {
                     inputType: TextInputType.visiblePassword,
                     obscureText: true,
                     prefixImagePath: 'assets/images/lock.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 19,
-                    ),
+                    validator: (value) {
+
+                      if((value == null || value.isEmpty)) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      if(value.length < 6) {
+                        return STR_PASSWORD_LENGTH_SHORT.tr;
+                      }
+
+                      if(value != _passwordController.text) {
+                        return STR_CONFIRM_PASSWORD_MISMATCH.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   78.h,
 
                   CustomButton(
                     text: STR_SIGNUP.tr,
-                    onTap: () {},
+                    onTap: () => _authController.validateSignupForm(
+                      User(
+                        username: _usernameController.text,
+                        email: _emailController.text,
+                        password: _passwordController.text
+                      )
+                    ),
                   ),
 
                   39.h,
