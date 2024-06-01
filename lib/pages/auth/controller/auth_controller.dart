@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:html/parser.dart';
 
 import '../../../barrels/localizations.dart';
 import '../../../barrels/models.dart';
@@ -22,6 +23,13 @@ class AuthController extends GetxController {
 
     if(formKey.currentState!.validate()) {
       _signup(user);
+    }
+  }
+
+  void validateLoginForm(User user) {
+
+    if(formKey.currentState!.validate()) {
+      _login(user);
     }
   }
 
@@ -49,6 +57,28 @@ class AuthController extends GetxController {
     }
   }
 
+  Future<void> _login(User user) async {
+
+    try {
+      var response = await _authRepo.signInUser(user);
+
+      var jsonData = json.decode(response.body);
+
+      if(response.statusCode == HttpStatus.ok) {
+        User authUser = User.fromJson(jsonData);
+        return;
+      }
+
+      _showSnackBar(STR_FAILED.tr, _parseHtmlString(jsonData['message']), isErrorMsg: true);
+
+    } on AppException catch(error) {
+      _showSnackBar(STR_FAILED.tr, error.message!, isErrorMsg: true);
+
+    } catch(error) {
+      _showSnackBar(STR_FAILED.tr, STR_UNKNOWN_ERROR.tr, isErrorMsg: true);
+    }
+  }
+
   void _showSnackBar(String title, message, {bool isErrorMsg = false}) {
 
     Get.snackbar(title, message,
@@ -57,5 +87,11 @@ class AuthController extends GetxController {
       colorText: isErrorMsg ? Colors.white : null,
       backgroundColor: isErrorMsg ? Colors.redAccent : null,
     );
+  }
+
+  String _parseHtmlString(String htmlString) {
+    final document = parse(htmlString);
+    final String parsedString = parse(document.body!.text).documentElement!.text;
+    return parsedString;
   }
 }
