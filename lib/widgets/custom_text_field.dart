@@ -61,7 +61,7 @@ class CustomTextField extends StatelessWidget {
           suffixIconConstraints: BoxConstraints(
             maxHeight: 61,
           ),
-          errorStyle: TextStyles.hintStyle,
+          errorStyle: TextStyles.errorStyle,
           isDense: true,
           contentPadding: contentPadding,
           filled: true,
