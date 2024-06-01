@@ -56,7 +56,7 @@ class Login extends StatelessWidget {
                     controller: _usernameController,
                     hintText: STR_USERNAME.tr,
                     inputType: TextInputType.text,
-                    prefixImagePath: 'assets/images/email.png',
+                    prefixImagePath: 'assets/images/person.png',
                   ),
 
                   19.h,
