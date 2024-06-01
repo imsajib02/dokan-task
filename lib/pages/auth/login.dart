@@ -6,13 +6,14 @@ import '../../barrels/resources.dart';
 import '../../barrels/utils.dart';
 import '../../barrels/widgets.dart';
 import '../../route/routes.dart';
+import 'controller/auth_controller.dart';
 
 class Login extends StatelessWidget {
 
+  final _authController = Get.put(AuthController());
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Login({Key? key}) : super(key: key);
 
@@ -27,7 +28,7 @@ class Login extends StatelessWidget {
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           child: Form(
-            key: _formKey,
+            key: _authController.formKey,
             child: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 32,

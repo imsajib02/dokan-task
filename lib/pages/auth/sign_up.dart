@@ -6,15 +6,16 @@ import '../../barrels/resources.dart';
 import '../../barrels/utils.dart';
 import '../../barrels/widgets.dart';
 import '../../route/routes.dart';
+import 'controller/auth_controller.dart';
 
 class Signup extends StatelessWidget {
+
+  final _authController = Get.find<AuthController>();
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
-
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   Signup({Key? key}) : super(key: key);
 
@@ -29,7 +30,7 @@ class Signup extends StatelessWidget {
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           child: Form(
-            key: _formKey,
+            key: _authController.formKey,
             child: Container(
               margin: EdgeInsets.only(bottom: 54),
               padding: EdgeInsets.symmetric(horizontal: 32),
