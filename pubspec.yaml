@@ -36,6 +36,7 @@ dependencies:
   http: ^0.13.5
   get_it: ^7.2.0
   lottie: ^1.4.2
+  html: ^0.15.1
   flutter:
     sdk: flutter
   flutter_localizations:
