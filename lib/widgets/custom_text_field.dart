@@ -15,12 +15,11 @@ class CustomTextField extends StatelessWidget {
   final Function(String)? onChanged;
   final TextAlign? textAlign;
   final int? maxLength;
-  final EdgeInsets? contentPadding;
   final String prefixImagePath;
 
   const CustomTextField({Key? key, required this.controller, this.inputType = TextInputType.text, this.inputAction = TextInputAction.next, this.validator,
     required this.hintText, this.obscureText = false, this.suffixIcon, this.enabled = true, this.minLines, this.maxLines, this.onChanged,
-    this.textAlign = TextAlign.left, this.maxLength, this.contentPadding = const EdgeInsets.all(17), required this.prefixImagePath}) : super(key: key);
+    this.textAlign = TextAlign.left, this.maxLength, required this.prefixImagePath}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +62,10 @@ class CustomTextField extends StatelessWidget {
           ),
           errorStyle: TextStyles.errorStyle,
           isDense: true,
-          contentPadding: contentPadding,
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 30,
+            vertical: 20,
+          ),
           filled: true,
           fillColor: Colors.white70,
           border: OutlineInputBorder(
