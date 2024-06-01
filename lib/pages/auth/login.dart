@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../barrels/localizations.dart';
+import '../../barrels/models.dart';
 import '../../barrels/resources.dart';
 import '../../barrels/utils.dart';
 import '../../barrels/widgets.dart';
@@ -112,7 +113,12 @@ class Login extends StatelessWidget {
 
                   CustomButton(
                     text: STR_LOGIN.tr,
-                    onTap: () {},
+                    onTap: () => _authController.validateLoginForm(
+                      User(
+                        username: _usernameController.text,
+                        password: _passwordController.text,
+                      )
+                    ),
                   ),
 
                   40.h,
