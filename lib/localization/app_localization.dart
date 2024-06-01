@@ -21,6 +21,10 @@ class AppLocalization extends Translations {
       'invalid_email': 'Invalid email address!',
       'must_be_6_char': 'Must be 6 character long!',
       'confirm_password_mismatch': 'Confirm password does not match!',
+      'no_internet': 'No internet connection!',
+      'inactive_connection': 'Internet connection not working!',
+      'timed_out': 'Timed out!',
+      'unknown_error': 'Something went wrong!',
     },
     'bn_BD': {
       'app_name': 'দোকান',

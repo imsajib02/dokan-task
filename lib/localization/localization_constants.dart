@@ -18,3 +18,7 @@ const STR_REQUIRED = 'required';
 const STR_INVALID_EMAIL = 'invalid_email';
 const STR_PASSWORD_LENGTH_SHORT = 'must_be_6_char';
 const STR_CONFIRM_PASSWORD_MISMATCH = 'confirm_password_mismatch';
+const STR_NO_INTERNET = 'no_internet';
+const STR_INACTIVE_CONNECTION = 'inactive_connection';
+const STR_TIMED_OUT = 'timed_out';
+const STR_UNKNOWN_ERROR = 'unknown_error';
