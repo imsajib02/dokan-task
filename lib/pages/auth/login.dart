@@ -54,8 +54,8 @@ class Login extends StatelessWidget {
 
                   CustomTextField(
                     controller: _usernameController,
-                    hintText: STR_EMAIL.tr,
-                    inputType: TextInputType.emailAddress,
+                    hintText: STR_USERNAME.tr,
+                    inputType: TextInputType.text,
                     prefixImagePath: 'assets/images/email.png',
                   ),
 
