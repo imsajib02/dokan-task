@@ -173,7 +173,7 @@ class Signup extends StatelessWidget {
                         return STR_PASSWORD_LENGTH_SHORT.tr;
                       }
 
-                      if(Value != _passwordController.text) {
+                      if(value != _passwordController.text) {
                         return STR_CONFIRM_PASSWORD_MISMATCH.tr;
                       }
 
