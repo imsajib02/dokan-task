@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../barrels/localizations.dart';
+import '../../barrels/models.dart';
 import '../../barrels/resources.dart';
 import '../../barrels/utils.dart';
 import '../../barrels/widgets.dart';
@@ -12,7 +13,7 @@ class Signup extends StatelessWidget {
 
   final _authController = Get.find<AuthController>();
 
-  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
@@ -105,7 +106,7 @@ class Signup extends StatelessWidget {
                   52.h,
 
                   CustomTextField(
-                    controller: _nameController,
+                    controller: _usernameController,
                     hintText: STR_USERNAME.tr,
                     inputType: TextInputType.text,
                     prefixImagePath: 'assets/images/person.png',
