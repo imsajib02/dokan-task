@@ -22,3 +22,5 @@ const STR_NO_INTERNET = 'no_internet';
 const STR_INACTIVE_CONNECTION = 'inactive_connection';
 const STR_TIMED_OUT = 'timed_out';
 const STR_UNKNOWN_ERROR = 'unknown_error';
+const STR_SUCCESS = 'success';
+const STR_FAILED = 'failed';

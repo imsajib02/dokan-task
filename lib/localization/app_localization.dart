@@ -25,6 +25,8 @@ class AppLocalization extends Translations {
       'inactive_connection': 'Internet connection not working!',
       'timed_out': 'Timed out!',
       'unknown_error': 'Something went wrong!',
+      'success': 'Success!',
+      'failed': 'Failed!',
     },
     'bn_BD': {
       'app_name': 'দোকান',
