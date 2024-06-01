@@ -109,10 +109,6 @@ class Signup extends StatelessWidget {
                     hintText: STR_NAME.tr,
                     inputType: TextInputType.text,
                     prefixImagePath: 'assets/images/person.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 20,
-                    ),
                   ),
 
                   19.h,
@@ -122,10 +118,6 @@ class Signup extends StatelessWidget {
                     hintText: STR_EMAIL.tr,
                     inputType: TextInputType.emailAddress,
                     prefixImagePath: 'assets/images/email.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 20,
-                    ),
                     validator: (value) {
 
                       if(value == null || value.isEmpty) {
@@ -148,9 +140,6 @@ class Signup extends StatelessWidget {
                     inputType: TextInputType.visiblePassword,
                     obscureText: true,
                     prefixImagePath: 'assets/images/lock.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 19,
-                    ),
                     validator: (value) {
 
                       if((value == null || value.isEmpty)) {
@@ -173,9 +162,6 @@ class Signup extends StatelessWidget {
                     inputType: TextInputType.visiblePassword,
                     obscureText: true,
                     prefixImagePath: 'assets/images/lock.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 19,
-                    ),
                     validator: (value) {
 
                       if((value == null || value.isEmpty)) {
