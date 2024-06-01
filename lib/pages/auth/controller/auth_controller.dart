@@ -11,8 +11,12 @@ import '../../../barrels/utils.dart';
 
 class AuthController extends GetxController {
 
+  var isPasswordVisible = false.obs;
+
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final _authRepo = getIt<AuthRepository>();
+
+  void togglePasswordVisibility() => isPasswordVisible.toggle();
 
   void validateSignupForm(User user) {
 
