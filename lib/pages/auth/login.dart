@@ -57,10 +57,6 @@ class Login extends StatelessWidget {
                     hintText: STR_EMAIL.tr,
                     inputType: TextInputType.emailAddress,
                     prefixImagePath: 'assets/images/email.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 20,
-                    ),
                   ),
 
                   19.h,
@@ -71,9 +67,6 @@ class Login extends StatelessWidget {
                     inputType: TextInputType.visiblePassword,
                     obscureText: true,
                     prefixImagePath: 'assets/images/lock.png',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 19,
-                    ),
                     suffixIcon: Container(
                       margin: EdgeInsets.fromLTRB(30, 21, 23, 19),
                       child: SizedBox(
