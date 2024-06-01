@@ -110,6 +110,14 @@ class Signup extends StatelessWidget {
                     hintText: STR_USERNAME.tr,
                     inputType: TextInputType.text,
                     prefixImagePath: 'assets/images/person.png',
+                    validator: (value) {
+
+                      if((value == null || value.isEmpty)) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   19.h,
