@@ -185,7 +185,7 @@ class Signup extends StatelessWidget {
 
                   CustomButton(
                     text: STR_SIGNUP.tr,
-                    onTap: () => _authController.validate(
+                    onTap: () => _authController.validateSignupForm(
                       User(
                         username: _usernameController.text,
                         email: _emailController.text,
