@@ -126,6 +126,18 @@ class Signup extends StatelessWidget {
                       horizontal: 30,
                       vertical: 20,
                     ),
+                    validator: (value) {
+
+                      if(value == null || value.isEmpty) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      if(!GetUtils.isEmail(value)) {
+                        return STR_INVALID_EMAIL.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   19.h,
@@ -139,6 +151,18 @@ class Signup extends StatelessWidget {
                     contentPadding: EdgeInsets.symmetric(
                       vertical: 19,
                     ),
+                    validator: (value) {
+
+                      if((value == null || value.isEmpty)) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      if(value.length < 6) {
+                        return STR_PASSWORD_LENGTH_SHORT.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   19.h,
@@ -152,6 +176,22 @@ class Signup extends StatelessWidget {
                     contentPadding: EdgeInsets.symmetric(
                       vertical: 19,
                     ),
+                    validator: (value) {
+
+                      if((value == null || value.isEmpty)) {
+                        return STR_REQUIRED.tr;
+                      }
+
+                      if(value.length < 6) {
+                        return STR_PASSWORD_LENGTH_SHORT.tr;
+                      }
+
+                      if(Value != _passwordController.text) {
+                        return STR_CONFIRM_PASSWORD_MISMATCH.tr;
+                      }
+
+                      return null;
+                    },
                   ),
 
                   78.h,
