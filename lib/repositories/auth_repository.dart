@@ -24,6 +24,8 @@ class AuthRepository {
     if(!networkStatus.isSuccess)
       throw BadConnectionException(message: STR_INACTIVE_CONNECTION.tr);
 
+    showProgressIndicator();
+
     var client = http.Client();
 
     String url = dotenv.env['API_URL']! + dotenv.env['SIGNUP']!;
@@ -35,16 +37,22 @@ class AuthRepository {
       ).timeout(Duration(seconds: timeoutSeconds));
 
       client.close();
+      Get.back(closeOverlays: true);
+
       return response;
 
     } on TimeoutException {
 
       client.close();
+      Get.back(closeOverlays: true);
+
       throw ConnectionTimedOutException(message: STR_TIMED_OUT.tr);
 
     } catch(error) {
 
       client.close();
+      Get.back(closeOverlays: true);
+
       throw BadRequestException(message: STR_UNKNOWN_ERROR.tr);
     }
   }
