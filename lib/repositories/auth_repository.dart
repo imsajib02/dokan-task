@@ -12,4 +12,40 @@ import '../barrels/utils.dart';
 
 class AuthRepository {
 
+  Future<http.Response> createUserAccount(User user) async {
+
+    var result = await Connectivity().checkConnectivity();
+
+    if(result != ConnectivityResult.mobile && result != ConnectivityResult.wifi)
+      throw NoInternetException(message: STR_NO_INTERNET.tr);
+
+    var networkStatus = await InternetConnectionChecker().isHostReachable(options);
+
+    if(!networkStatus.isSuccess)
+      throw BadConnectionException(message: STR_INACTIVE_CONNECTION.tr);
+
+    var client = http.Client();
+
+    String url = dotenv.env['API_URL']! + dotenv.env['SIGNUP']!;
+
+    try {
+      var response = await client.post(Uri.parse(url),
+        body: user.toJson(),
+        headers: {'Accept' : 'application/json'},
+      ).timeout(Duration(seconds: timeoutSeconds));
+
+      client.close();
+      return response;
+
+    } on TimeoutException {
+
+      client.close();
+      throw ConnectionTimedOutException(message: STR_TIMED_OUT.tr);
+
+    } catch(error) {
+
+      client.close();
+      throw BadRequestException(message: STR_UNKNOWN_ERROR.tr);
+    }
+  }
 }
