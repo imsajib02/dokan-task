@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -32,8 +33,8 @@ class AuthRepository {
 
     try {
       var response = await client.post(Uri.parse(url),
-        body: user.toJson(),
-        headers: {'Accept' : 'application/json'},
+        body: jsonEncode(user.toJson()),
+        headers: {'Content-Type' : 'application/json', 'Accept' : 'application/json'},
       ).timeout(Duration(seconds: timeoutSeconds));
 
       client.close();
