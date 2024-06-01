@@ -4,6 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 
 import 'barrels/localizations.dart';
+import 'barrels/utils.dart';
 import 'route/routes.dart';
 import 'theme/app_theme.dart';
 
@@ -12,6 +13,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await dotenv.load(fileName: '.env');
+
+  registerServices();
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) {
     runApp(MyApp());
