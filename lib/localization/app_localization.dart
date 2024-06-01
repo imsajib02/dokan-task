@@ -13,7 +13,7 @@ class AppLocalization extends Translations {
       'forgot_password': 'Forgot Password?',
       'login': 'Login',
       'create_new_account': 'Create New Account',
-      'name': 'Name',
+      'username': 'Username',
       'confirm_password': 'Confirm Password',
       'already_signup': 'Already have an account?',
       'signup': 'Sign Up',
