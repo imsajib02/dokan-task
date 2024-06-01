@@ -12,7 +12,7 @@ class Login extends StatelessWidget {
 
   final _authController = Get.put(AuthController());
 
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   Login({Key? key}) : super(key: key);
@@ -53,7 +53,7 @@ class Login extends StatelessWidget {
                   38.h,
 
                   CustomTextField(
-                    controller: _emailController,
+                    controller: _usernameController,
                     hintText: STR_EMAIL.tr,
                     inputType: TextInputType.emailAddress,
                     prefixImagePath: 'assets/images/email.png',
