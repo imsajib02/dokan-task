@@ -40,4 +40,12 @@ class TextStyles {
     letterSpacing: 0.2,
     color: Color(0xFFFFFFFF),
   );
+
+  static TextStyle get errorStyle => GoogleFonts.getFont(
+    'Roboto',
+    fontWeight: FontWeight.w400,
+    fontSize: 13,
+    letterSpacing: 0.2,
+    color: Colors.redAccent,
+  );
 }
