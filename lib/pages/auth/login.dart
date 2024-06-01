@@ -67,14 +67,18 @@ class Login extends StatelessWidget {
                     inputType: TextInputType.visiblePassword,
                     obscureText: !_authController.isPasswordVisible.value,
                     prefixImagePath: 'assets/images/lock.png',
-                    suffixIcon: Container(
-                      margin: EdgeInsets.fromLTRB(30, 21, 23, 19),
-                      child: SizedBox(
-                        height: 20,
-                        width: 23,
-                        child: Icon(Icons.visibility_off,
-                          size: 20,
-                          color: Colors.grey,
+                    suffixIcon: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () => _authController.togglePasswordVisibility(),
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(30, 21, 23, 19),
+                        child: SizedBox(
+                          height: 20,
+                          width: 23,
+                          child: Icon(!_authController.isPasswordVisible.value ? Icons.visibility_off : Icons.visibility,
+                            size: 20,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                     ),
