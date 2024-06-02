@@ -67,4 +67,12 @@ class TextStyles {
     letterSpacing: 0.2,
     color: Color(0xFF000000),
   );
+
+  static TextStyle get filterTextStyle => GoogleFonts.getFont(
+    'Lato',
+    fontWeight: FontWeight.w400,
+    fontSize: 15.6,
+    letterSpacing: 0.1,
+    color: Color(0xFF818995),
+  );
 }
