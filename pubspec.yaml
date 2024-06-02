@@ -38,6 +38,7 @@ dependencies:
   lottie: ^1.4.2
   html: ^0.15.1
   animated_bottom_navigation_bar: 1.2.0
+  sliver_tools: ^0.2.12
   flutter:
     sdk: flutter
   flutter_localizations:
