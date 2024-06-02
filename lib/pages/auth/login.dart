@@ -11,7 +11,7 @@ import 'controller/auth_controller.dart';
 
 class Login extends StatelessWidget {
 
-  final _authController = Get.put(AuthController());
+  final _controller = Get.put(AuthController());
 
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -29,7 +29,7 @@ class Login extends StatelessWidget {
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           child: Form(
-            key: _authController.formKey,
+            key: _controller.formKey,
             child: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 32,
@@ -74,17 +74,17 @@ class Login extends StatelessWidget {
                     controller: _passwordController,
                     hintText: STR_PASSWORD.tr,
                     inputType: TextInputType.visiblePassword,
-                    obscureText: !_authController.isPasswordVisible.value,
+                    obscureText: !_controller.isPasswordVisible.value,
                     prefixImagePath: 'assets/images/lock.png',
                     suffixIcon: GestureDetector(
                       behavior: HitTestBehavior.opaque,
-                      onTap: () => _authController.togglePasswordVisibility(),
+                      onTap: () => _controller.togglePasswordVisibility(),
                       child: Container(
                         margin: EdgeInsets.fromLTRB(30, 21, 23, 19),
                         child: SizedBox(
                           height: 20,
                           width: 23,
-                          child: Icon(!_authController.isPasswordVisible.value ? Icons.visibility_off : Icons.visibility,
+                          child: Icon(!_controller.isPasswordVisible.value ? Icons.visibility_off : Icons.visibility,
                             size: 20,
                             color: Colors.grey,
                           ),
@@ -121,7 +121,7 @@ class Login extends StatelessWidget {
 
                   CustomButton(
                     text: STR_LOGIN.tr,
-                    onTap: () => _authController.validateLoginForm(
+                    onTap: () => _controller.validateLoginForm(
                       User(
                         username: _usernameController.text,
                         password: _passwordController.text,
