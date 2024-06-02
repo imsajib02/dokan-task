@@ -42,4 +42,29 @@ class TextStyles {
     letterSpacing: 0.2,
     color: Colors.redAccent,
   );
+
+  static TextStyle get productTitleStyle => GoogleFonts.getFont(
+    'Roboto',
+    fontWeight: FontWeight.w400,
+    fontSize: 13.9,
+    letterSpacing: 0.1,
+    color: Colors.black,
+  );
+
+  static TextStyle get productInfoStyle => GoogleFonts.getFont(
+    'Lato',
+    fontWeight: FontWeight.w400,
+    fontSize: 15,
+    letterSpacing: 0.1,
+    color: Color(0xFF989FA8),
+    decorationColor: Color(0xFF989FA8),
+  );
+
+  static TextStyle get productPriceStyle => GoogleFonts.getFont(
+    'Roboto',
+    fontWeight: FontWeight.w700,
+    fontSize: 18,
+    letterSpacing: 0.2,
+    color: Color(0xFF000000),
+  );
 }
