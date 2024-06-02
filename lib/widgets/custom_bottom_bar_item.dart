@@ -19,7 +19,7 @@ class CustomBottomBarItem extends StatelessWidget {
         child: Image.asset(imagePath,
           height: 22,
           width: 22,
-          color: Color(0xFF6E7FAA),
+          color: indexPosition == activeIndex ? Theme.of(context).primaryColor : Color(0xFF6E7FAA),
           fit: BoxFit.contain,
         ),
       ),
