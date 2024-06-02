@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
         SystemNavigator.pop();
         return Future(() => false);
       },
-      child: Scaffold(
+      child: Obx(() => Scaffold(
         floatingActionButton: Visibility(
           visible: MediaQuery.of(context).viewInsets.bottom == 0,
           child: Material(
@@ -72,28 +72,28 @@ class Home extends StatelessWidget {
                   imagePath: 'assets/images/home.png',
                   indexPosition: 0,
                   activeIndex: _homeController.activeIndex.value,
-                  onTap: (index) {},
+                  onTap: (index) => _homeController.updateActiveIndex(index),
                 ),
 
                 CustomBottomBarItem(
                   imagePath: 'assets/images/categories.png',
                   indexPosition: 1,
                   activeIndex: _homeController.activeIndex.value,
-                  onTap: (index) {},
+                  onTap: (index) => _homeController.updateActiveIndex(index),
                 ),
 
                 CustomBottomBarItem(
                   imagePath: 'assets/images/cart.png',
                   indexPosition: 2,
                   activeIndex: _homeController.activeIndex.value,
-                  onTap: (index) {},
+                  onTap: (index) => _homeController.updateActiveIndex(index),
                 ),
 
                 CustomBottomBarItem(
                   imagePath: 'assets/images/account.png',
                   indexPosition: 3,
                   activeIndex: _homeController.activeIndex.value,
-                  onTap: (index) {},
+                  onTap: (index) => _homeController.updateActiveIndex(index),
                 ),
               ],
             );
@@ -105,7 +105,7 @@ class Home extends StatelessWidget {
             return Container();
           },
         ),
-      ),
+      )),
     );
   }
 }
