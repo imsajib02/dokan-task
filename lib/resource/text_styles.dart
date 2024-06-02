@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextStyles {
 
   TextStyles._();
 
-  static TextStyle get appbarTitleStyle => TextStyle(
-    fontSize: 15,
-    fontWeight: FontWeight.w500,
-    color: Get.isDarkMode ? Colors.white : Colors.black,
-  );
-
-  static TextStyle get textFieldHintStyle => TextStyle(
-    fontSize: 15,
-    fontWeight: FontWeight.w400,
-    color: Colors.grey[500],
+  static TextStyle get appbarTitleStyle => GoogleFonts.getFont(
+    'Roboto',
+    fontWeight: FontWeight.w700,
+    fontSize: 22.6,
+    color: Color(0xFF222455),
   );
 
   static TextStyle get headlineStyle => GoogleFonts.getFont(
@@ -47,5 +41,38 @@ class TextStyles {
     fontSize: 13,
     letterSpacing: 0.2,
     color: Colors.redAccent,
+  );
+
+  static TextStyle get productTitleStyle => GoogleFonts.getFont(
+    'Roboto',
+    fontWeight: FontWeight.w400,
+    fontSize: 13.9,
+    letterSpacing: 0.1,
+    color: Colors.black,
+  );
+
+  static TextStyle get productInfoStyle => GoogleFonts.getFont(
+    'Lato',
+    fontWeight: FontWeight.w400,
+    fontSize: 15,
+    letterSpacing: 0.1,
+    color: Color(0xFF989FA8),
+    decorationColor: Color(0xFF989FA8),
+  );
+
+  static TextStyle get productPriceStyle => GoogleFonts.getFont(
+    'Roboto',
+    fontWeight: FontWeight.w700,
+    fontSize: 18,
+    letterSpacing: 0.2,
+    color: Color(0xFF000000),
+  );
+
+  static TextStyle get filterTextStyle => GoogleFonts.getFont(
+    'Lato',
+    fontWeight: FontWeight.w400,
+    fontSize: 15.6,
+    letterSpacing: 0.1,
+    color: Color(0xFF818995),
   );
 }

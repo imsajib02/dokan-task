@@ -11,7 +11,7 @@ import 'controller/auth_controller.dart';
 
 class Signup extends StatelessWidget {
 
-  final _authController = Get.find<AuthController>();
+  final _controller = Get.find<AuthController>();
 
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -31,7 +31,7 @@ class Signup extends StatelessWidget {
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           child: Form(
-            key: _authController.formKey,
+            key: _controller.formKey,
             child: Container(
               margin: EdgeInsets.only(bottom: 54),
               padding: EdgeInsets.symmetric(horizontal: 32),
@@ -193,7 +193,7 @@ class Signup extends StatelessWidget {
 
                   CustomButton(
                     text: STR_SIGNUP.tr,
-                    onTap: () => _authController.validateSignupForm(
+                    onTap: () => _controller.validateSignupForm(
                       User(
                         username: _usernameController.text,
                         email: _emailController.text,

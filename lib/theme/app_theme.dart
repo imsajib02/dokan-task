@@ -33,9 +33,6 @@ class AppTheme {
       centerTitle: true,
       titleTextStyle: TextStyles.appbarTitleStyle,
     ),
-    inputDecorationTheme: InputDecorationTheme(
-      hintStyle: TextStyles.textFieldHintStyle,
-    ),
   );
 
 
@@ -64,9 +61,6 @@ class AppTheme {
       ),
       centerTitle: true,
       titleTextStyle: TextStyles.appbarTitleStyle,
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-      hintStyle: TextStyles.textFieldHintStyle,
     ),
   );
 }

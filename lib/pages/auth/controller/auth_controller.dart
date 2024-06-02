@@ -9,6 +9,7 @@ import '../../../barrels/localizations.dart';
 import '../../../barrels/models.dart';
 import '../../../barrels/repositories.dart';
 import '../../../barrels/utils.dart';
+import '../../../route/routes.dart';
 
 class AuthController extends GetxController {
 
@@ -66,6 +67,7 @@ class AuthController extends GetxController {
 
       if(response.statusCode == HttpStatus.ok) {
         User authUser = User.fromJson(jsonData);
+        Get.offNamed(ROUTE_HOME);
         return;
       }
 
