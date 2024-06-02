@@ -12,12 +12,6 @@ class TextStyles {
     color: Color(0xFF222455),
   );
 
-  static TextStyle get textFieldHintStyle => TextStyle(
-    fontSize: 15,
-    fontWeight: FontWeight.w400,
-    color: Colors.grey[500],
-  );
-
   static TextStyle get headlineStyle => GoogleFonts.getFont(
     'Roboto',
     fontWeight: FontWeight.w700,
