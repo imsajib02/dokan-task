@@ -27,6 +27,8 @@ class AppLocalization extends Translations {
       'unknown_error': 'Something went wrong!',
       'success': 'Success!',
       'failed': 'Failed!',
+      'product_list': 'Product List',
+      'my_account': 'My Account',
     },
     'bn_BD': {
       'app_name': 'দোকান',

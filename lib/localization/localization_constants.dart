@@ -24,3 +24,5 @@ const STR_TIMED_OUT = 'timed_out';
 const STR_UNKNOWN_ERROR = 'unknown_error';
 const STR_SUCCESS = 'success';
 const STR_FAILED = 'failed';
+const STR_PRODUCT_LIST = 'product_list';
+const STR_MY_ACCOUNT = 'my_account';
