@@ -29,6 +29,9 @@ class AppLocalization extends Translations {
       'failed': 'Failed!',
       'product_list': 'Product List',
       'my_account': 'My Account',
+      'sold': 'Sold',
+      'filter': 'Filter',
+      'sort_by': 'Sort By',
     },
     'bn_BD': {
       'app_name': 'দোকান',

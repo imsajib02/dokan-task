@@ -26,3 +26,6 @@ const STR_SUCCESS = 'success';
 const STR_FAILED = 'failed';
 const STR_PRODUCT_LIST = 'product_list';
 const STR_MY_ACCOUNT = 'my_account';
+const STR_SOLD = 'sold';
+const STR_FILTER = 'filter';
+const STR_SORT_BY = 'sort_by';
