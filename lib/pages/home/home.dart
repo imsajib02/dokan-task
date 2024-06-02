@@ -9,7 +9,7 @@ import 'controller/home_controller.dart';
 
 class Home extends StatelessWidget {
 
-  final _homeController = Get.put(HomeController());
+  final _controller = Get.put(HomeController());
 
   Home({Key? key}) : super(key: key);
 
@@ -56,7 +56,7 @@ class Home extends StatelessWidget {
             itemCount: 4,
             elevation: 4,
             backgroundColor: Colors.white,
-            activeIndex: _homeController.activeIndex.value,
+            activeIndex: _controller.activeIndex.value,
             splashColor: Theme.of(context).primaryColor,
             splashSpeedInMilliseconds: 300,
             notchSmoothness: NotchSmoothness.defaultEdge,
@@ -73,29 +73,29 @@ class Home extends StatelessWidget {
                   CustomBottomBarItem(
                     imagePath: 'assets/images/home.png',
                     indexPosition: 0,
-                    activeIndex: _homeController.activeIndex.value,
-                    onTap: (index) => _homeController.updateActiveIndex(index),
+                    activeIndex: _controller.activeIndex.value,
+                    onTap: (index) => _controller.updateActiveIndex(index),
                   ),
 
                   CustomBottomBarItem(
                     imagePath: 'assets/images/categories.png',
                     indexPosition: 1,
-                    activeIndex: _homeController.activeIndex.value,
-                    onTap: (index) => _homeController.updateActiveIndex(index),
+                    activeIndex: _controller.activeIndex.value,
+                    onTap: (index) => _controller.updateActiveIndex(index),
                   ),
 
                   CustomBottomBarItem(
                     imagePath: 'assets/images/cart.png',
                     indexPosition: 2,
-                    activeIndex: _homeController.activeIndex.value,
-                    onTap: (index) => _homeController.updateActiveIndex(index),
+                    activeIndex: _controller.activeIndex.value,
+                    onTap: (index) => _controller.updateActiveIndex(index),
                   ),
 
                   CustomBottomBarItem(
                     imagePath: 'assets/images/account.png',
                     indexPosition: 3,
-                    activeIndex: _homeController.activeIndex.value,
-                    onTap: (index) => _homeController.updateActiveIndex(index),
+                    activeIndex: _controller.activeIndex.value,
+                    onTap: (index) => _controller.updateActiveIndex(index),
                   ),
                 ],
               );
@@ -105,7 +105,7 @@ class Home extends StatelessWidget {
             builder: (BuildContext context) {
 
               return IndexedStack(
-                index: _homeController.activeIndex.value,
+                index: _controller.activeIndex.value,
                 children: [
 
                   Products(),
