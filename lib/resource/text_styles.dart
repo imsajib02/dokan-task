@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextStyles {
 
   TextStyles._();
 
-  static TextStyle get appbarTitleStyle => TextStyle(
-    fontSize: 15,
-    fontWeight: FontWeight.w500,
-    color: Get.isDarkMode ? Colors.white : Colors.black,
+  static TextStyle get appbarTitleStyle => GoogleFonts.getFont(
+    'Roboto',
+    fontWeight: FontWeight.w700,
+    fontSize: 22.6,
+    color: Color(0xFF222455),
   );
 
   static TextStyle get textFieldHintStyle => TextStyle(
