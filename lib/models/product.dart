@@ -21,7 +21,7 @@ class Product {
     salePrice = json['sale_price'] ?? '';
     onSale = json['on_sale'] ?? false;
     purchasable = json['purchasable'] ?? false;
-    totalSale = json['total_sale'] ?? 0;
+    totalSale = json['total_sales'] ?? 0;
     images = json['images'] == null ? [] : List<String>.from(json['images'].map((image) => image['src']));
   }
 }
