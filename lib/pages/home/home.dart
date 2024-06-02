@@ -1,12 +1,14 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 import '../../barrels/widgets.dart';
+import 'controller/home_controller.dart';
 
 class Home extends StatelessWidget {
 
-  int _index = 0;
+  final _homeController = Get.put(HomeController());
 
   Home({Key? key}) : super(key: key);
 
@@ -52,7 +54,7 @@ class Home extends StatelessWidget {
           itemCount: 4,
           elevation: 4,
           backgroundColor: Colors.white,
-          activeIndex: _index,
+          activeIndex: _homeController.activeIndex.value,
           splashColor: Theme.of(context).primaryColor,
           splashSpeedInMilliseconds: 300,
           notchSmoothness: NotchSmoothness.defaultEdge,
@@ -69,28 +71,28 @@ class Home extends StatelessWidget {
                 CustomBottomBarItem(
                   imagePath: 'assets/images/home.png',
                   indexPosition: 0,
-                  activeIndex: _index,
+                  activeIndex: _homeController.activeIndex.value,
                   onTap: (index) {},
                 ),
 
                 CustomBottomBarItem(
                   imagePath: 'assets/images/categories.png',
                   indexPosition: 1,
-                  activeIndex: _index,
+                  activeIndex: _homeController.activeIndex.value,
                   onTap: (index) {},
                 ),
 
                 CustomBottomBarItem(
                   imagePath: 'assets/images/cart.png',
                   indexPosition: 2,
-                  activeIndex: _index,
+                  activeIndex: _homeController.activeIndex.value,
                   onTap: (index) {},
                 ),
 
                 CustomBottomBarItem(
                   imagePath: 'assets/images/account.png',
                   indexPosition: 3,
-                  activeIndex: _index,
+                  activeIndex: _homeController.activeIndex.value,
                   onTap: (index) {},
                 ),
               ],
