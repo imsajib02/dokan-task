@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import '../../barrels/pages.dart';
 import '../../barrels/widgets.dart';
 import 'controller/home_controller.dart';
 
@@ -103,7 +104,19 @@ class Home extends StatelessWidget {
           body: Builder(
             builder: (BuildContext context) {
 
-              return Container();
+              return IndexedStack(
+                index: _homeController.activeIndex.value,
+                children: [
+
+                  Products(),
+
+                  Container(),
+
+                  Container(),
+
+                  MyAccount(),
+                ],
+              );
             },
           ),
         ),
