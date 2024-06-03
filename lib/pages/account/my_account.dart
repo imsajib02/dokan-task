@@ -11,6 +11,9 @@ import 'controller/account_controller.dart';
 
 class MyAccount extends StatelessWidget {
 
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
+
   final _authController = Get.find<AuthController>();
   final _accountController = Get.put(AccountController());
 
@@ -115,14 +118,14 @@ class MyAccount extends StatelessWidget {
 
               AccountUpdateField(
                 title: STR_FIRST_NAME.tr,
-                onInputChanged: (value) {},
+                onInputChanged: (value) => _firstNameController.text = value,
               ),
 
               22.h,
 
               AccountUpdateField(
                 title: STR_LAST_NAME.tr,
-                onInputChanged: (value) {},
+                onInputChanged: (value) => _lastNameController.text = value,
               ),
 
               24.h,
