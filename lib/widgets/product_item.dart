@@ -16,11 +16,11 @@ class ProductItem extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: kWhite,
         borderRadius: BorderRadius.circular(10.4167),
         boxShadow: [
-          BoxShadow(
-            color: Color(0x1A4D5877),
+          const BoxShadow(
+            color: kGreyish,
             offset: Offset(2, 3),
             blurRadius: 6,
             spreadRadius: 0,
@@ -70,7 +70,7 @@ class ProductItem extends StatelessWidget {
                       Visibility(
                         visible: product.regularPrice != null && product.regularPrice!.isNotEmpty && product.regularPrice != product.price,
                         child: Padding(
-                          padding: EdgeInsets.only(right: 10),
+                          padding: const EdgeInsets.only(right: 10),
                           child: Text("\$" + product.regularPrice!,
                             style: TextStyles.productInfoStyle.copyWith(
                               decoration: TextDecoration.lineThrough,

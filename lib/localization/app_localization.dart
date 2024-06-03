@@ -19,7 +19,7 @@ class AppLocalization extends Translations {
       'signup': 'Sign Up',
       'required': 'Field is required!',
       'invalid_email': 'Invalid email address!',
-      'must_be_6_char': 'Must be 6 character long!',
+      'must_be_4_char': 'Must be 4 characters long!',
       'confirm_password_mismatch': 'Confirm password does not match!',
       'no_internet': 'No internet connection!',
       'inactive_connection': 'Internet connection not working!',

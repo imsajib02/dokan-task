@@ -33,8 +33,8 @@ class Signup extends StatelessWidget {
           child: Form(
             key: _controller.formKey,
             child: Container(
-              margin: EdgeInsets.only(bottom: 54),
-              padding: EdgeInsets.symmetric(horizontal: 32),
+              margin: const EdgeInsets.only(bottom: 54),
+              padding: const EdgeInsets.symmetric(horizontal: 32),
               child: Column(
                 children: [
 
@@ -53,11 +53,11 @@ class Signup extends StatelessWidget {
                             height: 121,
                             width: 121,
                             decoration: BoxDecoration(
-                              color: Colors.white70,
+                              color: kWhite,
                               shape: BoxShape.circle,
                               boxShadow: [
-                                BoxShadow(
-                                  color: Color(0x1A395AB8),
+                                const BoxShadow(
+                                  color: kGreyish,
                                   offset: Offset(0, 2),
                                   blurRadius: 2,
                                   spreadRadius: 2,
@@ -81,8 +81,8 @@ class Signup extends StatelessWidget {
                               color: Theme.of(context).primaryColor,
                               shape: BoxShape.circle,
                               boxShadow: [
-                                BoxShadow(
-                                  color: Color(0x1A395AB8),
+                                const BoxShadow(
+                                  color: kGreyish,
                                   offset: Offset(0, 2),
                                   blurRadius: 2,
                                   spreadRadius: 2,
@@ -94,7 +94,7 @@ class Signup extends StatelessWidget {
                               width: 23,
                               child: Icon(Icons.camera_alt,
                                 size: 15,
-                                color: Colors.white,
+                                color: kWhite,
                               ),
                             ),
                           ),
@@ -155,7 +155,7 @@ class Signup extends StatelessWidget {
                         return STR_REQUIRED.tr;
                       }
 
-                      if(value.length < 6) {
+                      if(value.length < minPasswordLength) {
                         return STR_PASSWORD_LENGTH_SHORT.tr;
                       }
 
@@ -177,7 +177,7 @@ class Signup extends StatelessWidget {
                         return STR_REQUIRED.tr;
                       }
 
-                      if(value.length < 6) {
+                      if(value.length < minPasswordLength) {
                         return STR_PASSWORD_LENGTH_SHORT.tr;
                       }
 
@@ -229,7 +229,7 @@ class Signup extends StatelessWidget {
                       Text(STR_ALREADY_SIGNED.tr,
                         style: TextStyles.hintStyle.copyWith(
                           fontWeight: FontWeight.w300,
-                          color: Color(0xFF383C40),
+                          color: kGreyishBlack,
                         ),
                       ),
 
@@ -237,11 +237,11 @@ class Signup extends StatelessWidget {
 
                       GestureDetector(
                         behavior: HitTestBehavior.opaque,
-                        onTap: () => Get.offNamed(ROUTE_INITIAL),
+                        onTap: () => Get.offNamed(ROUTE_LOGIN),
                         child: Text(STR_LOGIN.tr,
                           style: TextStyles.hintStyle.copyWith(
                             fontWeight: FontWeight.w700,
-                            color: Color(0xFF2893E3),
+                            color: kBlue,
                           ),
                         ),
                       ),

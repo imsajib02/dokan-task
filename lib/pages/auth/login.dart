@@ -11,7 +11,7 @@ import 'controller/auth_controller.dart';
 
 class Login extends StatelessWidget {
 
-  final _controller = Get.put(AuthController());
+  final _controller = Get.find<AuthController>();
 
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -31,7 +31,7 @@ class Login extends StatelessWidget {
           child: Form(
             key: _controller.formKey,
             child: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 32,
                 vertical: 58,
               ),
@@ -80,13 +80,13 @@ class Login extends StatelessWidget {
                       behavior: HitTestBehavior.opaque,
                       onTap: () => _controller.togglePasswordVisibility(),
                       child: Container(
-                        margin: EdgeInsets.fromLTRB(30, 21, 23, 19),
+                        margin: const EdgeInsets.fromLTRB(30, 21, 23, 19),
                         child: SizedBox(
                           height: 20,
                           width: 23,
                           child: Icon(!_controller.isPasswordVisible.value ? Icons.visibility_off : Icons.visibility,
                             size: 20,
-                            color: Colors.grey,
+                            color: kGrey,
                           ),
                         ),
                       ),
@@ -97,7 +97,7 @@ class Login extends StatelessWidget {
                         return STR_REQUIRED.tr;
                       }
 
-                      if(value.length < 6) {
+                      if(value.length < minPasswordLength) {
                         return STR_PASSWORD_LENGTH_SHORT.tr;
                       }
 
@@ -155,7 +155,7 @@ class Login extends StatelessWidget {
                     child: Text(STR_CREATE_NEW_ACCOUNT.tr,
                       style: TextStyles.hintStyle.copyWith(
                         fontWeight: FontWeight.w300,
-                        color: Color(0xFF383C40),
+                        color: kGreyishBlack,
                       ),
                     ),
                   ),

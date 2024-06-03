@@ -14,9 +14,22 @@ import '../../../route/routes.dart';
 class AuthController extends GetxController {
 
   var isPasswordVisible = false.obs;
+  var authUser = Rxn<User>();
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   final _authRepo = getIt<AuthRepository>();
+  var _myPref = getIt<MyPref>();
+
+  @override
+  void onInit() {
+    getAuthUser();
+    super.onInit();
+  }
+
+  void getAuthUser() {
+    authUser.value = _myPref.getAuthUser();
+  }
 
   void togglePasswordVisibility() => isPasswordVisible.toggle();
 
@@ -66,7 +79,10 @@ class AuthController extends GetxController {
       var jsonData = json.decode(response.body);
 
       if(response.statusCode == HttpStatus.ok) {
-        User authUser = User.fromJson(jsonData);
+
+        authUser.value = User.fromJson(jsonData);
+        _myPref.saveAuthUser(authUser.value!);
+
         Get.offNamed(ROUTE_HOME);
         return;
       }

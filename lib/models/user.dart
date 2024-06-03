@@ -24,4 +24,12 @@ class User {
     'email': email ?? '',
     'password': password ?? '',
   };
+
+  toCache() => {
+    'id': id,
+    'user_nicename': name ?? '',
+    'user_display_name': displayName ?? '',
+    'user_email': email ?? '',
+    'token': accessToken ?? '',
+  };
 }

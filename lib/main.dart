@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'barrels/localizations.dart';
 import 'barrels/utils.dart';
+import 'pages/auth/controller/auth_controller.dart';
 import 'route/routes.dart';
 import 'theme/app_theme.dart';
 
@@ -13,6 +15,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await dotenv.load(fileName: '.env');
+  await GetStorage.init(dotenv.env['STORAGE_PREF']!);
 
   registerServices();
 
@@ -23,12 +26,14 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
 
+  final _controller = Get.put(AuthController());
+
   MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
-    return GetMaterialApp(
+    return Obx(() => GetMaterialApp(
       title: dotenv.env['APP_TITLE']!,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
@@ -38,8 +43,8 @@ class MyApp extends StatelessWidget {
       translations: AppLocalization(),
       locale: LOCALE_ENGLISH,
       fallbackLocale: LOCALE_ENGLISH,
-      initialRoute: ROUTE_INITIAL,
+      initialRoute: _controller.authUser.value == null ? ROUTE_LOGIN : ROUTE_HOME,
       getPages: appPages,
-    );
+    ));
   }
 }

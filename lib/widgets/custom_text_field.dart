@@ -40,14 +40,14 @@ class CustomTextField extends StatelessWidget {
         obscureText: obscureText,
         validator: validator,
         style: TextStyles.hintStyle.copyWith(
-          color: Colors.black,
+          color: kBlack,
         ),
         textAlign: textAlign!,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyles.hintStyle,
           prefixIcon: Container(
-            margin: EdgeInsets.fromLTRB(23, 20, 16, 20),
+            margin: const EdgeInsets.fromLTRB(23, 20, 16, 20),
             child: Image.asset(prefixImagePath,
               height: 20,
               width: 19,
@@ -62,12 +62,12 @@ class CustomTextField extends StatelessWidget {
           ),
           errorStyle: TextStyles.errorStyle,
           isDense: true,
-          contentPadding: EdgeInsets.symmetric(
+          contentPadding: const EdgeInsets.symmetric(
             horizontal: 30,
             vertical: 20,
           ),
           filled: true,
-          fillColor: Colors.white70,
+          fillColor: kWhite.withOpacity(.70),
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(10),

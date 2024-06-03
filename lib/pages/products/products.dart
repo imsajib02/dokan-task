@@ -24,7 +24,7 @@ class Products extends StatelessWidget {
           actions: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 23),
-              child: Icon(Icons.search, size: 30, color: Color(0xFF222455)),
+              child: Icon(Icons.search, size: 30, color: kDarkBlue),
             ),
           ],
         ),
@@ -79,16 +79,16 @@ class Products extends StatelessWidget {
   Widget _buildFilterView(BuildContext context) {
 
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       color: Theme.of(context).scaffoldBackgroundColor,
       child: Container(
         padding: const EdgeInsets.fromLTRB(20, 21, 10.9, 21),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color(0xFFFFFFFF),
+          color: kWhite,
           boxShadow: [
-            BoxShadow(
-              color: Color(0x1A395AB8),
+            const BoxShadow(
+              color: kGreyish,
               offset: Offset(0, 3),
               blurRadius: 2,
             ),
@@ -105,7 +105,7 @@ class Products extends StatelessWidget {
               children: [
 
                 Container(
-                  margin: EdgeInsets.fromLTRB(0, 1, 11, 1),
+                  margin: const EdgeInsets.fromLTRB(0, 1, 11, 1),
                   child: Image.asset('assets/images/filter.png',
                     height: 15,
                     width: 16,
@@ -130,7 +130,7 @@ class Products extends StatelessWidget {
                   children: [
 
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 8.2, 0),
+                      margin: const EdgeInsets.fromLTRB(0, 0, 8.2, 0),
                       child: Text(STR_SORT_BY.tr,
                         style: TextStyles.filterTextStyle,
                       ),
@@ -139,7 +139,7 @@ class Products extends StatelessWidget {
                     SizedBox(
                       width: 13.5,
                       height: 7.6,
-                      child: Icon(Icons.keyboard_arrow_down_outlined, color: Color(0xFF818995)),
+                      child: Icon(Icons.keyboard_arrow_down_outlined, color: kOsloGrey),
                     ),
                   ],
                 ),
@@ -147,7 +147,7 @@ class Products extends StatelessWidget {
                 25.w,
 
                 Container(
-                  margin: EdgeInsets.fromLTRB(0, 2.3, 0, 1.8),
+                  margin: const EdgeInsets.fromLTRB(0, 2.3, 0, 1.8),
                   width: 18.9,
                   height: 13.9,
                   child: Image.asset('assets/images/menu.png',
