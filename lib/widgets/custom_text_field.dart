@@ -47,7 +47,7 @@ class CustomTextField extends StatelessWidget {
           hintText: hintText,
           hintStyle: TextStyles.hintStyle,
           prefixIcon: Container(
-            margin: EdgeInsets.fromLTRB(23, 20, 16, 20),
+            margin: const EdgeInsets.fromLTRB(23, 20, 16, 20),
             child: Image.asset(prefixImagePath,
               height: 20,
               width: 19,
@@ -62,7 +62,7 @@ class CustomTextField extends StatelessWidget {
           ),
           errorStyle: TextStyles.errorStyle,
           isDense: true,
-          contentPadding: EdgeInsets.symmetric(
+          contentPadding: const EdgeInsets.symmetric(
             horizontal: 30,
             vertical: 20,
           ),
