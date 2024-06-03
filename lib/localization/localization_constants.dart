@@ -37,3 +37,4 @@ const STR_FIRST_NAME = 'first_name';
 const STR_LAST_NAME = 'last_name';
 const STR_CANCEL = 'cancel';
 const STR_SAVE = 'save';
+const STR_UPDATE_SUCCESS = 'update_success';
