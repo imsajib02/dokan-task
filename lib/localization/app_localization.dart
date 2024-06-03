@@ -41,6 +41,12 @@ class AppLocalization extends Translations {
       'cancel': 'Cancel',
       'save': 'Save',
       'update_success': 'Updated successfully!',
+      'newest': 'Newest',
+      'oldest': 'Oldest',
+      'price_l2h': 'Price low > high',
+      'price_h2l': 'Price high > low',
+      'best_selling': 'Best selling',
+      'apply': 'Apply',
     },
     'bn_BD': {
       'app_name': 'দোকান',
