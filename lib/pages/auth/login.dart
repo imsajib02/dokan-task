@@ -31,7 +31,7 @@ class Login extends StatelessWidget {
           child: Form(
             key: _controller.formKey,
             child: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 32,
                 vertical: 58,
               ),
@@ -80,7 +80,7 @@ class Login extends StatelessWidget {
                       behavior: HitTestBehavior.opaque,
                       onTap: () => _controller.togglePasswordVisibility(),
                       child: Container(
-                        margin: EdgeInsets.fromLTRB(30, 21, 23, 19),
+                        margin: const EdgeInsets.fromLTRB(30, 21, 23, 19),
                         child: SizedBox(
                           height: 20,
                           width: 23,
