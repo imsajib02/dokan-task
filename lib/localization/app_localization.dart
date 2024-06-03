@@ -36,6 +36,10 @@ class AppLocalization extends Translations {
       'passwords': 'Passwords',
       'notification': 'Notification',
       'wishlist': 'Wishlist',
+      'first_name': 'First Name',
+      'last_name': 'Last Name',
+      'cancel': 'Cancel',
+      'save': 'Save',
     },
     'bn_BD': {
       'app_name': 'দোকান',

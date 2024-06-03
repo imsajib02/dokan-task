@@ -33,3 +33,5 @@ const STR_ACCOUNT = 'account';
 const STR_PASSWORDS = 'passwords';
 const STR_NOTIFICATION = 'notification';
 const STR_WISHLIST = 'wishlist';
+const STR_FIRST_NAME = 'first_name';
+const STR_LAST_NAME = 'last_name';
