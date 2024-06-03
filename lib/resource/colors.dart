@@ -19,3 +19,7 @@ const Color kSilverGrey = Color(0xFFA4A9AF);
 const Color kBlack = Color(0xFF000000);
 const Color kWhite = Color(0xFFFFFFFF);
 const Color kGrey = Color(0xFF9E9E9E);
+const Color kWhite700 = Color(0xB3FFFFFF);
+const Color kDarkGrey = Color(0xFF263238);
+const Color kJetGrey = Color(0xFF607374);
+const Color kTopazGreen = Color(0xFF1ABC9C);
