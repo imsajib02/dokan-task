@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
               child: Container(
                 height: 56,
                 width: 56,
-                padding: EdgeInsets.symmetric(vertical: 14.65, horizontal: 14.44),
+                padding: const EdgeInsets.symmetric(vertical: 14.65, horizontal: 14.44),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: LinearGradient(
