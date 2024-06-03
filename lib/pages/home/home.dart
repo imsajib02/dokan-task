@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../barrels/pages.dart';
+import '../../barrels/resources.dart';
 import '../../barrels/widgets.dart';
 import 'controller/home_controller.dart';
 
@@ -40,13 +41,13 @@ class Home extends StatelessWidget {
                     stops: [0.0, 1.0],
                     tileMode: TileMode.clamp,
                     colors: <Color>[
-                      Color(0xFFFF679B),
-                      Color(0xFFFF7B51),
+                      kRosePink,
+                      kRedOrange,
                     ],
                   ),
                 ),
                 child: FittedBox(
-                  child: Icon(Icons.search, color: Colors.white),
+                  child: Icon(Icons.search, color: kWhite),
                 ),
               ),
             ),
@@ -55,7 +56,7 @@ class Home extends StatelessWidget {
           bottomNavigationBar: AnimatedBottomNavigationBar.builder(
             itemCount: 4,
             elevation: 4,
-            backgroundColor: Colors.white,
+            backgroundColor: kWhite,
             activeIndex: _controller.activeIndex.value,
             splashColor: Theme.of(context).primaryColor,
             splashSpeedInMilliseconds: 300,

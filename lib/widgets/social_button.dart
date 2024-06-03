@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../barrels/resources.dart';
+
 class SocialButton extends StatelessWidget {
 
   final String imagePath;
@@ -21,10 +23,10 @@ class SocialButton extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Color(0xFFFFFFFF),
+            color: kWhite,
             boxShadow: [
               const BoxShadow(
-                color: Color(0x1A395AB8),
+                color: kGreyish,
                 offset: Offset(0, 3),
                 blurRadius: 2,
                 spreadRadius: 2,

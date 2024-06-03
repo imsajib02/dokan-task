@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../barrels/resources.dart';
+
 class CustomBottomBarItem extends StatelessWidget {
 
   final String imagePath;
@@ -19,7 +21,7 @@ class CustomBottomBarItem extends StatelessWidget {
         child: Image.asset(imagePath,
           height: 22,
           width: 22,
-          color: indexPosition == activeIndex ? Theme.of(context).primaryColor : Color(0xFF6E7FAA),
+          color: indexPosition == activeIndex ? Theme.of(context).primaryColor : kGreyishBlue,
           fit: BoxFit.contain,
         ),
       ),

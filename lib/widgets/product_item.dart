@@ -16,11 +16,11 @@ class ProductItem extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: kWhite,
         borderRadius: BorderRadius.circular(10.4167),
         boxShadow: [
           const BoxShadow(
-            color: Color(0x1A4D5877),
+            color: kGreyish,
             offset: Offset(2, 3),
             blurRadius: 6,
             spreadRadius: 0,

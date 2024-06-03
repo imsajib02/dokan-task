@@ -40,7 +40,7 @@ class CustomTextField extends StatelessWidget {
         obscureText: obscureText,
         validator: validator,
         style: TextStyles.hintStyle.copyWith(
-          color: Colors.black,
+          color: kBlack,
         ),
         textAlign: textAlign!,
         decoration: InputDecoration(
@@ -67,7 +67,7 @@ class CustomTextField extends StatelessWidget {
             vertical: 20,
           ),
           filled: true,
-          fillColor: Colors.white70,
+          fillColor: kWhite.withOpacity(.70),
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(10),

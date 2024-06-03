@@ -53,11 +53,11 @@ class Signup extends StatelessWidget {
                             height: 121,
                             width: 121,
                             decoration: BoxDecoration(
-                              color: Colors.white70,
+                              color: kWhite,
                               shape: BoxShape.circle,
                               boxShadow: [
                                 const BoxShadow(
-                                  color: Color(0x1A395AB8),
+                                  color: kGreyish,
                                   offset: Offset(0, 2),
                                   blurRadius: 2,
                                   spreadRadius: 2,
@@ -82,7 +82,7 @@ class Signup extends StatelessWidget {
                               shape: BoxShape.circle,
                               boxShadow: [
                                 const BoxShadow(
-                                  color: Color(0x1A395AB8),
+                                  color: kGreyish,
                                   offset: Offset(0, 2),
                                   blurRadius: 2,
                                   spreadRadius: 2,
@@ -94,7 +94,7 @@ class Signup extends StatelessWidget {
                               width: 23,
                               child: Icon(Icons.camera_alt,
                                 size: 15,
-                                color: Colors.white,
+                                color: kWhite,
                               ),
                             ),
                           ),
@@ -229,7 +229,7 @@ class Signup extends StatelessWidget {
                       Text(STR_ALREADY_SIGNED.tr,
                         style: TextStyles.hintStyle.copyWith(
                           fontWeight: FontWeight.w300,
-                          color: Color(0xFF383C40),
+                          color: kGreyishBlack,
                         ),
                       ),
 
@@ -241,7 +241,7 @@ class Signup extends StatelessWidget {
                         child: Text(STR_LOGIN.tr,
                           style: TextStyles.hintStyle.copyWith(
                             fontWeight: FontWeight.w700,
-                            color: Color(0xFF2893E3),
+                            color: kBlue,
                           ),
                         ),
                       ),

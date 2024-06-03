@@ -24,7 +24,7 @@ class Products extends StatelessWidget {
           actions: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 23),
-              child: Icon(Icons.search, size: 30, color: Color(0xFF222455)),
+              child: Icon(Icons.search, size: 30, color: kDarkBlue),
             ),
           ],
         ),
@@ -85,10 +85,10 @@ class Products extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(20, 21, 10.9, 21),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color(0xFFFFFFFF),
+          color: kWhite,
           boxShadow: [
             const BoxShadow(
-              color: Color(0x1A395AB8),
+              color: kGreyish,
               offset: Offset(0, 3),
               blurRadius: 2,
             ),
@@ -139,7 +139,7 @@ class Products extends StatelessWidget {
                     SizedBox(
                       width: 13.5,
                       height: 7.6,
-                      child: Icon(Icons.keyboard_arrow_down_outlined, color: Color(0xFF818995)),
+                      child: Icon(Icons.keyboard_arrow_down_outlined, color: kOsloGrey),
                     ),
                   ],
                 ),

@@ -86,7 +86,7 @@ class Login extends StatelessWidget {
                           width: 23,
                           child: Icon(!_controller.isPasswordVisible.value ? Icons.visibility_off : Icons.visibility,
                             size: 20,
-                            color: Colors.grey,
+                            color: kGrey,
                           ),
                         ),
                       ),
@@ -155,7 +155,7 @@ class Login extends StatelessWidget {
                     child: Text(STR_CREATE_NEW_ACCOUNT.tr,
                       style: TextStyles.hintStyle.copyWith(
                         fontWeight: FontWeight.w300,
-                        color: Color(0xFF383C40),
+                        color: kGreyishBlack,
                       ),
                     ),
                   ),
