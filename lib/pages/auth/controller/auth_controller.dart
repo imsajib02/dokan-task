@@ -80,9 +80,7 @@ class AuthController extends GetxController {
 
       if(response.statusCode == HttpStatus.ok) {
 
-        authUser.value = User.fromJson(jsonData);
-        _myPref.saveAuthUser(authUser.value!);
-
+        saveAuthUser(User.fromJson(jsonData));
         Get.offNamed(ROUTE_HOME);
         return;
       }
@@ -111,5 +109,10 @@ class AuthController extends GetxController {
     final document = parse(htmlString);
     final String parsedString = parse(document.body!.text).documentElement!.text;
     return parsedString;
+  }
+
+  void saveAuthUser(User user) {
+    authUser.value = user;
+    _myPref.saveAuthUser(authUser.value!);
   }
 }
