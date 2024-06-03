@@ -155,7 +155,7 @@ class Signup extends StatelessWidget {
                         return STR_REQUIRED.tr;
                       }
 
-                      if(value.length < 6) {
+                      if(value.length < minPasswordLength) {
                         return STR_PASSWORD_LENGTH_SHORT.tr;
                       }
 
@@ -177,7 +177,7 @@ class Signup extends StatelessWidget {
                         return STR_REQUIRED.tr;
                       }
 
-                      if(value.length < 6) {
+                      if(value.length < minPasswordLength) {
                         return STR_PASSWORD_LENGTH_SHORT.tr;
                       }
 
