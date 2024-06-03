@@ -154,7 +154,7 @@ class MyAccount extends StatelessWidget {
                       textColor: kWhite,
                       backgroundColor: kTopazGreen,
                       borderColor: kTopazGreen,
-                      onTap: () {},
+                      onTap: () => _accountController.updateAccountInfo(firstName: _firstNameController.text, lastName: _lastNameController.text),
                     ),
                   ),
                 ],
