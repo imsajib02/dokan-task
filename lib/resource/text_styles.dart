@@ -100,4 +100,13 @@ class TextStyles {
     fontSize: 17.4,
     letterSpacing: 0.2,
   );
+
+  static TextStyle get filterOptionTitleStyle => GoogleFonts.getFont(
+    'Roboto',
+    fontWeight: FontWeight.w400,
+    fontSize: 15,
+    height: 1.1,
+    letterSpacing: 0.15,
+    color: kBlack,
+  );
 }
