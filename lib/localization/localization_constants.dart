@@ -29,3 +29,7 @@ const STR_MY_ACCOUNT = 'my_account';
 const STR_SOLD = 'sold';
 const STR_FILTER = 'filter';
 const STR_SORT_BY = 'sort_by';
+const STR_ACCOUNT = 'account';
+const STR_PASSWORDS = 'passwords';
+const STR_NOTIFICATION = 'notification';
+const STR_WISHLIST = 'wishlist';
