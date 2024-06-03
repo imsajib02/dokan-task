@@ -77,4 +77,12 @@ class TextStyles {
     letterSpacing: 0.1,
     color: kOsloGrey,
   );
+
+  static TextStyle get accountInfoTextStyle => GoogleFonts.getFont(
+    'Lato',
+    fontWeight: FontWeight.w900,
+    fontSize: 24,
+    letterSpacing: 0.2,
+    color: kBlack,
+  );
 }
