@@ -40,6 +40,7 @@ class AppLocalization extends Translations {
       'last_name': 'Last Name',
       'cancel': 'Cancel',
       'save': 'Save',
+      'update_success': 'Updated successfully!',
     },
     'bn_BD': {
       'app_name': 'দোকান',
