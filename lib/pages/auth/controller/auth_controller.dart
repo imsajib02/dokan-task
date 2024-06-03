@@ -14,9 +14,22 @@ import '../../../route/routes.dart';
 class AuthController extends GetxController {
 
   var isPasswordVisible = false.obs;
+  var authUser = Rxn<User>();
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   final _authRepo = getIt<AuthRepository>();
+  var _myPref = getIt<MyPref>();
+
+  @override
+  void onInit() {
+    getAuthUser();
+    super.onInit();
+  }
+
+  void getAuthUser() {
+    authUser.value = _myPref.getAuthUser();
+  }
 
   void togglePasswordVisibility() => isPasswordVisible.toggle();
 
