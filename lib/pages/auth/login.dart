@@ -11,7 +11,7 @@ import 'controller/auth_controller.dart';
 
 class Login extends StatelessWidget {
 
-  final _controller = Get.put(AuthController());
+  final _controller = Get.find<AuthController>();
 
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
