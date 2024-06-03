@@ -8,4 +8,5 @@ final getIt = GetIt.instance;
 void registerServices() {
   getIt.registerLazySingleton<MyPref>(() => MyPref());
   getIt.registerLazySingleton<AuthRepository>(() => AuthRepository());
+  getIt.registerLazySingleton<AccountRepository>(() => AccountRepository());
 }
