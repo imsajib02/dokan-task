@@ -33,8 +33,8 @@ class Signup extends StatelessWidget {
           child: Form(
             key: _controller.formKey,
             child: Container(
-              margin: EdgeInsets.only(bottom: 54),
-              padding: EdgeInsets.symmetric(horizontal: 32),
+              margin: const EdgeInsets.only(bottom: 54),
+              padding: const EdgeInsets.symmetric(horizontal: 32),
               child: Column(
                 children: [
 
@@ -56,7 +56,7 @@ class Signup extends StatelessWidget {
                               color: Colors.white70,
                               shape: BoxShape.circle,
                               boxShadow: [
-                                BoxShadow(
+                                const BoxShadow(
                                   color: Color(0x1A395AB8),
                                   offset: Offset(0, 2),
                                   blurRadius: 2,
@@ -81,7 +81,7 @@ class Signup extends StatelessWidget {
                               color: Theme.of(context).primaryColor,
                               shape: BoxShape.circle,
                               boxShadow: [
-                                BoxShadow(
+                                const BoxShadow(
                                   color: Color(0x1A395AB8),
                                   offset: Offset(0, 2),
                                   blurRadius: 2,
