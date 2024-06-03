@@ -237,7 +237,7 @@ class Signup extends StatelessWidget {
 
                       GestureDetector(
                         behavior: HitTestBehavior.opaque,
-                        onTap: () => Get.offNamed(ROUTE_INITIAL),
+                        onTap: () => Get.offNamed(ROUTE_LOGIN),
                         child: Text(STR_LOGIN.tr,
                           style: TextStyles.hintStyle.copyWith(
                             fontWeight: FontWeight.w700,
