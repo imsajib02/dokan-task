@@ -6,3 +6,5 @@ const int timeoutSeconds = 40;
 const int minPasswordLength = 4;
 
 final AddressCheckOptions options = AddressCheckOptions(InternetAddress('8.8.8.8'), port: 53, timeout: Duration(seconds: 2));
+
+enum filterTypes { newest, oldest, priceL2H, priceH2L, bestSell }
