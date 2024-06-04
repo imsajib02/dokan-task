@@ -118,14 +118,14 @@ class MyAccount extends StatelessWidget {
 
               AccountUpdateField(
                 title: STR_FIRST_NAME.tr,
-                onInputChanged: (value) => firstNameController.text = value,
+                controller: firstNameController,
               ),
 
               22.h,
 
               AccountUpdateField(
                 title: STR_LAST_NAME.tr,
-                onInputChanged: (value) => lastNameController.text = value,
+                controller: lastNameController,
               ),
 
               24.h,
