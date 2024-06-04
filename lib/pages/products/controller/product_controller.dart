@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -44,5 +45,27 @@ class ProductController extends GetxController {
         filterOptions[i] = filterOptions[i].copyWith(isChecked: false);
       }
     }
+  }
+
+  void validateFiltering() {
+
+    Get.back(closeOverlays: true);
+
+    var result = filterOptions.where((item) => item.isChecked);
+
+    if(result.isEmpty) {
+      _showSnackBar(STR_OOPS.tr, STR_SELECT_FILTER_OPTION.tr);
+      return;
+    }
+  }
+
+  void _showSnackBar(String title, message, {bool isErrorMsg = false}) {
+
+    Get.snackbar(title, message,
+      margin: EdgeInsets.all(15),
+      duration: const Duration(milliseconds: 3500),
+      colorText: isErrorMsg ? Colors.white : null,
+      backgroundColor: isErrorMsg ? Colors.redAccent : null,
+    );
   }
 }
