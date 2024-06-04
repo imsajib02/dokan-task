@@ -10,6 +10,7 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import '../barrels/localizations.dart';
 import '../barrels/models.dart';
 import '../barrels/utils.dart';
+import '../barrels/widgets.dart';
 
 class AuthRepository {
 
