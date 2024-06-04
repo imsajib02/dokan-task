@@ -16,3 +16,13 @@ void showProgressIndicator() => Get.dialog(
   ),
   barrierDismissible: false,
 );
+
+void showSnackBar(String title, message, {bool isErrorMsg = false}) {
+
+  Get.snackbar(title, message,
+    margin: EdgeInsets.all(15),
+    duration: const Duration(milliseconds: 3500),
+    colorText: isErrorMsg ? Colors.white : null,
+    backgroundColor: isErrorMsg ? Colors.redAccent : null,
+  );
+}
