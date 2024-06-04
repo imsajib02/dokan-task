@@ -10,9 +10,6 @@ import 'controller/home_controller.dart';
 
 class Home extends StatelessWidget {
 
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
-
   final _controller = Get.put(HomeController());
 
   Home({Key? key}) : super(key: key);
@@ -119,8 +116,8 @@ class Home extends StatelessWidget {
                   Container(),
 
                   MyAccount(
-                    firstNameController: _firstNameController,
-                    lastNameController: _lastNameController,
+                    firstNameController: _controller.firstNameController,
+                    lastNameController: _controller.lastNameController,
                   ),
                 ],
               );
