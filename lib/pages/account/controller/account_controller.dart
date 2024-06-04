@@ -9,12 +9,15 @@ import '../../../barrels/repositories.dart';
 import '../../../barrels/utils.dart';
 import '../../../barrels/widgets.dart';
 import '../../auth/controller/auth_controller.dart';
+import '../../home/controller/home_controller.dart';
 
 class AccountController extends GetxController {
 
   var isExpanded = [false, false, false, false].obs;
 
   final _authController = Get.find<AuthController>();
+  final _homeController = Get.find<HomeController>();
+
   final _accountRepo = getIt<AccountRepository>();
 
   void toggleExpansionStatus(int position) => isExpanded[position] = !isExpanded[position];
@@ -36,6 +39,8 @@ class AccountController extends GetxController {
             ..lastName = jsonData['last_name'];
 
           _authController.saveAuthUser(user);
+          _homeController.setAuthUserAccountName();
+
           showSnackBar(STR_SUCCESS.tr, STR_UPDATE_SUCCESS.tr);
           return;
         }
