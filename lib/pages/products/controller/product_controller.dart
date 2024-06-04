@@ -57,6 +57,31 @@ class ProductController extends GetxController {
       _showSnackBar(STR_OOPS.tr, STR_SELECT_FILTER_OPTION.tr);
       return;
     }
+
+    _filterProducts(result.first);
+  }
+
+  void _filterProducts(FilterOption option) {
+
+    if(option.type.isNewest) {
+      productList.sort((a, b) => DateTime.parse(b.createDate!).compareTo(DateTime.parse(a.createDate!)));
+    }
+
+    if(option.type.isOldest) {
+      productList.sort((a, b) => DateTime.parse(a.createDate!).compareTo(DateTime.parse(b.createDate!)));
+    }
+
+    if(option.type.isPriceL2H) {
+      productList.sort((a, b) => double.parse(a.price!).compareTo(double.parse(b.price!)));
+    }
+
+    if(option.type.isPriceH2L) {
+      productList.sort((a, b) => double.parse(b.price!).compareTo(double.parse(a.price!)));
+    }
+
+    if(option.type.isBestSelling) {
+      productList.sort((a, b) => b.totalSale!.compareTo(a.totalSale!));
+    }
   }
 
   void _showSnackBar(String title, message, {bool isErrorMsg = false}) {
