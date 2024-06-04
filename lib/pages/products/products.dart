@@ -29,6 +29,7 @@ class Products extends StatelessWidget {
           ],
         ),
         body: Obx(() => CustomScrollView(
+          controller: _controller.scrollController,
           slivers: [
 
             MultiSliver(
@@ -249,7 +250,7 @@ class Products extends StatelessWidget {
                   textColor: kJetGrey,
                   backgroundColor: kWhite,
                   borderColor: kGrey,
-                  onTap: () {},
+                  onTap: () => Get.back(closeOverlays: true),
                 ),
               ),
 
@@ -262,7 +263,7 @@ class Products extends StatelessWidget {
                   textColor: kWhite,
                   backgroundColor: kTopazGreen,
                   borderColor: kTopazGreen,
-                  onTap: () {},
+                  onTap: () => _controller.validateFiltering(),
                 ),
               ),
             ],

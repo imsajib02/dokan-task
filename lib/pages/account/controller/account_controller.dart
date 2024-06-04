@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../barrels/localizations.dart';
 import '../../../barrels/models.dart';
 import '../../../barrels/repositories.dart';
 import '../../../barrels/utils.dart';
+import '../../../barrels/widgets.dart';
 import '../../auth/controller/auth_controller.dart';
 
 class AccountController extends GetxController {
@@ -36,28 +36,18 @@ class AccountController extends GetxController {
             ..lastName = jsonData['last_name'];
 
           _authController.saveAuthUser(user);
-          _showSnackBar(STR_UPDATE_SUCCESS.tr, jsonData['message']);
+          showSnackBar(STR_UPDATE_SUCCESS.tr, jsonData['message']);
           return;
         }
 
-        _showSnackBar(STR_FAILED.tr, jsonData['message'], isErrorMsg: true);
+        showSnackBar(STR_FAILED.tr, jsonData['message'], isErrorMsg: true);
 
       } on AppException catch(error) {
-        _showSnackBar(STR_FAILED.tr, error.message!, isErrorMsg: true);
+        showSnackBar(STR_FAILED.tr, error.message!, isErrorMsg: true);
 
       } catch(error) {
-        _showSnackBar(STR_FAILED.tr, STR_UNKNOWN_ERROR.tr, isErrorMsg: true);
+        showSnackBar(STR_FAILED.tr, STR_UNKNOWN_ERROR.tr, isErrorMsg: true);
       }
     }
-  }
-
-  void _showSnackBar(String title, message, {bool isErrorMsg = false}) {
-
-    Get.snackbar(title, message,
-      margin: EdgeInsets.all(15),
-      duration: const Duration(milliseconds: 3500),
-      colorText: isErrorMsg ? Colors.white : null,
-      backgroundColor: isErrorMsg ? Colors.redAccent : null,
-    );
   }
 }

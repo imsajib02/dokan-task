@@ -8,6 +8,7 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import '../barrels/localizations.dart';
 import '../barrels/utils.dart';
+import '../barrels/widgets.dart';
 import '../pages/auth/controller/auth_controller.dart';
 
 class AccountRepository {
