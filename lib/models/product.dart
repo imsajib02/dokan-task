@@ -9,9 +9,10 @@ class Product {
   bool? purchasable;
   int? totalSale;
   List<String>? images;
+  String? createDate;
 
   Product({this.id, this.name, this.price, this.regularPrice, this.salePrice,
-    this.onSale, this.purchasable, this.totalSale, this.images});
+    this.onSale, this.purchasable, this.totalSale, this.images, this.createDate});
 
   Product.fromJson(Map<String, dynamic> json) {
     id = json['id'] ?? null;
@@ -23,5 +24,6 @@ class Product {
     purchasable = json['purchasable'] ?? false;
     totalSale = json['total_sales'] ?? 0;
     images = json['images'] == null ? [] : List<String>.from(json['images'].map((image) => image['src']));
+    createDate = json['date_created'] ?? '';
   }
 }
