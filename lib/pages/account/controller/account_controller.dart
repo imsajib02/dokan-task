@@ -36,7 +36,7 @@ class AccountController extends GetxController {
             ..lastName = jsonData['last_name'];
 
           _authController.saveAuthUser(user);
-          showSnackBar(STR_UPDATE_SUCCESS.tr, jsonData['message']);
+          showSnackBar(STR_SUCCESS.tr, STR_UPDATE_SUCCESS.tr);
           return;
         }
 
