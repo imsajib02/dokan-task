@@ -145,7 +145,9 @@ class MyAccount extends StatelessWidget {
                       textColor: kJetGrey,
                       backgroundColor: kWhite,
                       borderColor: kGrey,
-                      onTap: () {},
+                      onTap: () {
+                        FocusScope.of(context).requestFocus(FocusNode());
+                      },
                     ),
                   ),
 
@@ -158,7 +160,10 @@ class MyAccount extends StatelessWidget {
                       textColor: kWhite,
                       backgroundColor: kTopazGreen,
                       borderColor: kTopazGreen,
-                      onTap: () => _accountController.updateAccountInfo(firstName: firstNameController.text, lastName: lastNameController.text),
+                      onTap: () {
+                        FocusScope.of(context).requestFocus(FocusNode());
+                        _accountController.updateAccountInfo(firstName: firstNameController.text, lastName: lastNameController.text);
+                      },
                     ),
                   ),
                 ],

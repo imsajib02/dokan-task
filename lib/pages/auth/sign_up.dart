@@ -196,13 +196,18 @@ class Signup extends StatelessWidget {
 
                     CustomButton(
                       text: STR_SIGNUP.tr,
-                      onTap: () => _controller.validateSignupForm(
-                        User(
-                          username: _usernameController.text,
-                          email: _emailController.text,
-                          password: _passwordController.text
-                        )
-                      ),
+                      onTap: () {
+
+                        FocusScope.of(context).requestFocus(FocusNode());
+
+                        _controller.validateSignupForm(
+                          User(
+                            username: _usernameController.text,
+                            email: _emailController.text,
+                            password: _passwordController.text,
+                          ),
+                        );
+                      },
                     ),
 
                     39.h,

@@ -124,12 +124,17 @@ class Login extends StatelessWidget {
 
                     CustomButton(
                       text: STR_LOGIN.tr,
-                      onTap: () => _controller.validateLoginForm(
-                        User(
-                          username: _usernameController.text,
-                          password: _passwordController.text,
-                        )
-                      ),
+                      onTap: () {
+
+                        FocusScope.of(context).requestFocus(FocusNode());
+
+                        _controller.validateLoginForm(
+                          User(
+                            username: _usernameController.text,
+                            password: _passwordController.text,
+                          ),
+                        );
+                      },
                     ),
 
                     40.h,
