@@ -11,13 +11,13 @@ import 'controller/account_controller.dart';
 
 class MyAccount extends StatelessWidget {
 
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController firstNameController;
+  final TextEditingController lastNameController;
 
   final _authController = Get.find<AuthController>();
   final _accountController = Get.put(AccountController());
 
-  MyAccount({Key? key}) : super(key: key);
+  MyAccount({Key? key, required this.firstNameController, required this.lastNameController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -118,14 +118,14 @@ class MyAccount extends StatelessWidget {
 
               AccountUpdateField(
                 title: STR_FIRST_NAME.tr,
-                onInputChanged: (value) => _firstNameController.text = value,
+                onInputChanged: (value) => firstNameController.text = value,
               ),
 
               22.h,
 
               AccountUpdateField(
                 title: STR_LAST_NAME.tr,
-                onInputChanged: (value) => _lastNameController.text = value,
+                onInputChanged: (value) => lastNameController.text = value,
               ),
 
               24.h,
@@ -154,7 +154,7 @@ class MyAccount extends StatelessWidget {
                       textColor: kWhite,
                       backgroundColor: kTopazGreen,
                       borderColor: kTopazGreen,
-                      onTap: () => _accountController.updateAccountInfo(firstName: _firstNameController.text, lastName: _lastNameController.text),
+                      onTap: () => _accountController.updateAccountInfo(firstName: firstNameController.text, lastName: lastNameController.text),
                     ),
                   ),
                 ],
