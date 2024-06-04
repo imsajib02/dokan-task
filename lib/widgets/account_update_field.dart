@@ -6,9 +6,9 @@ import '../barrels/resources.dart';
 class AccountUpdateField extends StatelessWidget {
 
   final String title;
-  final Function(String) onInputChanged;
+  final TextEditingController controller;
 
-  const AccountUpdateField({Key? key, required this.title, required this.onInputChanged}) : super(key: key);
+  const AccountUpdateField({Key? key, required this.title, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +27,13 @@ class AccountUpdateField extends StatelessWidget {
         12.h,
 
         TextFormField(
+          controller: controller,
           keyboardType: TextInputType.text,
           autofocus: false,
           style: TextStyles.hintStyle.copyWith(
             color: kBlack,
           ),
           textAlign: TextAlign.left,
-          onChanged: (value) => onInputChanged(value),
           decoration: InputDecoration(
             errorStyle: TextStyles.errorStyle,
             isDense: true,

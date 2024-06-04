@@ -11,13 +11,13 @@ import 'controller/account_controller.dart';
 
 class MyAccount extends StatelessWidget {
 
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController firstNameController;
+  final TextEditingController lastNameController;
 
   final _authController = Get.find<AuthController>();
   final _accountController = Get.put(AccountController());
 
-  MyAccount({Key? key}) : super(key: key);
+  MyAccount({Key? key, required this.firstNameController, required this.lastNameController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,34 +28,38 @@ class MyAccount extends StatelessWidget {
           title: STR_MY_ACCOUNT.tr,
         ),
         body: Obx(() => SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
 
-                _buildProfilePicture(),
+                  _buildProfilePicture(),
 
-                40.h,
+                  40.h,
 
-                Text(_authController.authUser.value!.displayName!,
-                  textAlign: TextAlign.center,
-                  style: TextStyles.accountInfoTextStyle,
-                ),
+                  Text(_authController.authUser.value!.displayName!,
+                    textAlign: TextAlign.center,
+                    style: TextStyles.accountInfoTextStyle,
+                  ),
 
-                7.h,
+                  7.h,
 
-                Text(_authController.authUser.value!.email!,
-                  textAlign: TextAlign.center,
-                  style: TextStyles.productInfoStyle,
-                ),
+                  Text(_authController.authUser.value!.email!,
+                    textAlign: TextAlign.center,
+                    style: TextStyles.productInfoStyle,
+                  ),
 
-                37.h,
+                  37.h,
 
-                _buildProfileSection(context),
+                  _buildProfileSection(context),
 
-                37.h,
-              ],
+                  37.h,
+                ],
+              ),
             ),
           ),
         )),
@@ -118,14 +122,14 @@ class MyAccount extends StatelessWidget {
 
               AccountUpdateField(
                 title: STR_FIRST_NAME.tr,
-                onInputChanged: (value) => _firstNameController.text = value,
+                controller: firstNameController,
               ),
 
               22.h,
 
               AccountUpdateField(
                 title: STR_LAST_NAME.tr,
-                onInputChanged: (value) => _lastNameController.text = value,
+                controller: lastNameController,
               ),
 
               24.h,
@@ -141,7 +145,9 @@ class MyAccount extends StatelessWidget {
                       textColor: kJetGrey,
                       backgroundColor: kWhite,
                       borderColor: kGrey,
-                      onTap: () {},
+                      onTap: () {
+                        FocusScope.of(context).requestFocus(FocusNode());
+                      },
                     ),
                   ),
 
@@ -154,7 +160,10 @@ class MyAccount extends StatelessWidget {
                       textColor: kWhite,
                       backgroundColor: kTopazGreen,
                       borderColor: kTopazGreen,
-                      onTap: () => _accountController.updateAccountInfo(firstName: _firstNameController.text, lastName: _lastNameController.text),
+                      onTap: () {
+                        FocusScope.of(context).requestFocus(FocusNode());
+                        _accountController.updateAccountInfo(firstName: firstNameController.text, lastName: lastNameController.text);
+                      },
                     ),
                   ),
                 ],

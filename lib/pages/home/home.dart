@@ -115,7 +115,10 @@ class Home extends StatelessWidget {
 
                   Container(),
 
-                  MyAccount(),
+                  MyAccount(
+                    firstNameController: _controller.firstNameController,
+                    lastNameController: _controller.lastNameController,
+                  ),
                 ],
               );
             },
