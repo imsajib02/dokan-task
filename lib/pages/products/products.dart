@@ -249,7 +249,7 @@ class Products extends StatelessWidget {
                   textColor: kJetGrey,
                   backgroundColor: kWhite,
                   borderColor: kGrey,
-                  onTap: () {},
+                  onTap: () => Get.back(closeOverlays: true),
                 ),
               ),
 
