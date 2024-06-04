@@ -47,6 +47,8 @@ class AppLocalization extends Translations {
       'price_h2l': 'Price high > low',
       'best_selling': 'Best selling',
       'apply': 'Apply',
+      'oops': 'Oops!',
+      'select_filter_option': 'Select any filtering option first!',
     },
     'bn_BD': {
       'app_name': 'দোকান',

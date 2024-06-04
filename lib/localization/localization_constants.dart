@@ -44,3 +44,5 @@ const STR_PRICE_L2H = 'price_l2h';
 const STR_PRICE_H2L = 'price_h2l';
 const STR_BEST_SELLING = 'best_selling';
 const STR_APPLY = 'apply';
+const STR_OOPS = 'oops';
+const STR_SELECT_FILTER_OPTION = 'select_filter_option';
