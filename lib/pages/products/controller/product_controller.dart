@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import '../../../barrels/localizations.dart';
 import '../../../barrels/models.dart';
 import '../../../barrels/utils.dart';
+import '../../../barrels/widgets.dart';
 
 class ProductController extends GetxController {
 
@@ -56,7 +57,7 @@ class ProductController extends GetxController {
     var result = filterOptions.where((item) => item.isChecked);
 
     if(result.isEmpty) {
-      _showSnackBar(STR_OOPS.tr, STR_SELECT_FILTER_OPTION.tr);
+      showSnackBar(STR_OOPS.tr, STR_SELECT_FILTER_OPTION.tr);
       return;
     }
 
@@ -90,15 +91,5 @@ class ProductController extends GetxController {
 
   void _scrollToTop() {
     scrollController.animateTo(scrollController.position.minScrollExtent, duration: Duration(milliseconds: 800), curve: Curves.easeOut);
-  }
-
-  void _showSnackBar(String title, message, {bool isErrorMsg = false}) {
-
-    Get.snackbar(title, message,
-      margin: EdgeInsets.all(15),
-      duration: const Duration(milliseconds: 3500),
-      colorText: isErrorMsg ? Colors.white : null,
-      backgroundColor: isErrorMsg ? Colors.redAccent : null,
-    );
   }
 }
