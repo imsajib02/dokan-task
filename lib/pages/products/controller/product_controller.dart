@@ -20,6 +20,8 @@ class ProductController extends GetxController {
     FilterOption(title: STR_BEST_SELLING.tr, isChecked: false, type: filterTypes.bestSell),
   ].obs;
 
+  final scrollController = ScrollController();
+
   @override
   void onInit() {
     _getProducts();
@@ -82,6 +84,12 @@ class ProductController extends GetxController {
     if(option.type.isBestSelling) {
       productList.sort((a, b) => b.totalSale!.compareTo(a.totalSale!));
     }
+
+    _scrollToTop();
+  }
+
+  void _scrollToTop() {
+    scrollController.animateTo(scrollController.position.minScrollExtent, duration: Duration(milliseconds: 800), curve: Curves.easeOut);
   }
 
   void _showSnackBar(String title, message, {bool isErrorMsg = false}) {

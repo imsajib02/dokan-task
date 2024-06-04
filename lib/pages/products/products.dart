@@ -29,6 +29,7 @@ class Products extends StatelessWidget {
           ],
         ),
         body: Obx(() => CustomScrollView(
+          controller: _controller.scrollController,
           slivers: [
 
             MultiSliver(
