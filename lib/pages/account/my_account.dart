@@ -28,34 +28,38 @@ class MyAccount extends StatelessWidget {
           title: STR_MY_ACCOUNT.tr,
         ),
         body: Obx(() => SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
 
-                _buildProfilePicture(),
+                  _buildProfilePicture(),
 
-                40.h,
+                  40.h,
 
-                Text(_authController.authUser.value!.displayName!,
-                  textAlign: TextAlign.center,
-                  style: TextStyles.accountInfoTextStyle,
-                ),
+                  Text(_authController.authUser.value!.displayName!,
+                    textAlign: TextAlign.center,
+                    style: TextStyles.accountInfoTextStyle,
+                  ),
 
-                7.h,
+                  7.h,
 
-                Text(_authController.authUser.value!.email!,
-                  textAlign: TextAlign.center,
-                  style: TextStyles.productInfoStyle,
-                ),
+                  Text(_authController.authUser.value!.email!,
+                    textAlign: TextAlign.center,
+                    style: TextStyles.productInfoStyle,
+                  ),
 
-                37.h,
+                  37.h,
 
-                _buildProfileSection(context),
+                  _buildProfileSection(context),
 
-                37.h,
-              ],
+                  37.h,
+                ],
+              ),
             ),
           ),
         )),
