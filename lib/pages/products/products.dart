@@ -262,7 +262,7 @@ class Products extends StatelessWidget {
                   textColor: kWhite,
                   backgroundColor: kTopazGreen,
                   borderColor: kTopazGreen,
-                  onTap: () {},
+                  onTap: () => _controller.validateFiltering(),
                 ),
               ),
             ],
